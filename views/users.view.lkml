@@ -14,6 +14,7 @@ view: users {
   }
 
   dimension: city {
+    label: "City (default filter)"
     type: string
     sql: ${TABLE}.city ;;
   }

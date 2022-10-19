@@ -4,6 +4,7 @@ view: order_items {
 
   dimension: id {
     primary_key: yes
+    label: "default filter"
     type: number
     sql: ${TABLE}.id ;;
   }
@@ -21,6 +22,7 @@ view: order_items {
   }
 
   dimension_group: returned {
+    label: "default filter"
     type: time
     timeframes: [
       raw,
@@ -42,5 +44,10 @@ view: order_items {
   measure: count {
     type: count
     drill_fields: [id, orders.id, inventory_items.id]
+  }
+
+  measure: medn {
+    type: median
+    drill_fields: [id]
   }
 }
